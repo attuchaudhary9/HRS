@@ -8,7 +8,7 @@ const connectionString = process.env.DATABASE_URL || 'postgres://user:password@l
 export const sequelize = new Sequelize(connectionString, {
   dialect: 'postgres',
   logging: false, // Set to console.log to see SQL queries
-  dialectOptions: connectionString.includes('supabase.co') ? {
+  dialectOptions: connectionString.includes('supabase') ? {
     ssl: {
       require: true,
       rejectUnauthorized: false,
